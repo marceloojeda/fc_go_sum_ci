@@ -7,9 +7,6 @@ steps:
   - name: 'gcr.io/cloud-builders/go'
     args: ['test', 'app']
     env: ['PROJECT_ROOT=go_sum_ci','GOPATH=/gopath']
-    volumes:
-      - name: 'go'
-        path: '/gopath'
 
 
   - name: 'gcr.io/cloud-builders/docker'
