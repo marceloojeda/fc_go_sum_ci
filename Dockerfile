@@ -1,5 +1,5 @@
 FROM scratch
 
-COPY ./src /workspace/gopath/src/go_sum_ci
+COPY ./src /go/bin/app
 
-ENTRYPOINT ["/go_sum_ci"]
+ENTRYPOINT ["/app"]
