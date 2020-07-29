@@ -1,0 +1,14 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/go'
+    args: ['install', '.']
+    env: ['PROJECT_ROOT=go_sum_ci']
+
+  - name: 'gcr.io/cloud-builders/go'
+    args: ['test', 'app']
+    env: ['PROJECT_ROOT=go_sum_ci']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '--tag=gcr.io/$PROJECT_ID/go_sum_ci', '.']
+
+  images: ['gcr.io/$PROJECT_ID/go_sum_ci']
